@@ -1,0 +1,71 @@
+header nav {
+   display: flex;
+   align-items: center;
+   gap: 2.5em;
+}
+
+header .open-manual {
+    font-size: 24px;
+    /* padding-bottom: 0.25em; */
+    border: none;
+    background: none;
+    color: var(--text-primary);
+}
+
+/* Hamburger */
+
+.hum-base {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hum-check {
+  position: absolute;
+  top: -15%;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  z-index: 1;   
+}
+
+.hum-stick {
+  display: block;
+  width: 40px;
+  height: 6px;
+  border-radius: 4px;
+  background-color: var(--text-primary);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hum-check:checked ~ .stick1 {
+  transform: rotate(45deg) translate(22%, 145%);
+}
+
+.hum-check:checked ~ .stick2 {
+  transform: rotate(45deg);
+}
+
+.hum-check:checked ~ .stick3 {
+  transform: rotate(-45deg) translate(20%, -135%);
+}
+
+.hum-hidden {
+  position: absolute;
+  top: 60px;
+  right: -1%;
+  width: 500%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--surface);
+  opacity: 0;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hum-check:checked ~ .hum-hidden {
+  opacity: 1;
+}
